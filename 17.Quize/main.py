@@ -9,4 +9,9 @@ for i_question in range(len(question_data)):
 def plus(a, b):
     return a + b
 
+
 print(plus(12, 12))
+
+
+def minus(a, b):
+    return a - b
