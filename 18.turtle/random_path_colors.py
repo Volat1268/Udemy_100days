@@ -3,13 +3,18 @@ from turtle import Turtle, Screen
 import random
 
 tim = Turtle()
-colours = [
-    "CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue",
-    "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"
-]
+
 angles = [
     0, 90, 180, 270
 ]
+t.colormode(255)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return r, g, b
 
 
 tim.pensize(5)
@@ -17,9 +22,8 @@ tim.ht()
 tim.speed(30)
 
 for _ in range(200):
-    pen_color = random.choice(colours)
+    pen_color = random_color()
     angle = random.choice(angles)
-    # angle = random.randint(0, 360)
     tim.forward(30)
     tim.setheading(angle)
     tim.pencolor(pen_color)
