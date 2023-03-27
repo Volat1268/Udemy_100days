@@ -1,41 +1,27 @@
-import turtle as t
+import turtle
 from turtle import Turtle, Screen
 import random
 
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    current_color = (r, g, b)
+    return current_color
+
+
+turtle.colormode(255)
+
+
 tim = Turtle()
-colours = [
-    "CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue",
-    "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"
-]
-angles = [
-    0, 90, 180, 270
-]
-
-
-tim.pensize(5)
-tim.ht()
+angle = 10
 tim.speed(30)
-
-for _ in range(200):
-    pen_color = random.choice(colours)
-    angle = random.choice(angles)
-    # angle = random.randint(0, 360)
-    tim.forward(30)
-    tim.setheading(angle)
+for _ in range(int(360 / angle)):
+    pen_color = random_color()
     tim.pencolor(pen_color)
-
-
-
-
-
-
-
-
-
-
-
-
-
+    tim.circle(-100)
+    tim.right(angle)
 
 
 
@@ -45,4 +31,3 @@ for _ in range(200):
 
 screen = Screen()
 screen.exitonclick()
-
