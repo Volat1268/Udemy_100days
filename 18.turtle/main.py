@@ -2,43 +2,52 @@ from turtle import Turtle, Screen
 import random
 
 tim = Turtle()
-tim.shape("classic")
-
-# for _ in range(4):
-#     tim.forward(100)
-#     tim.left(90)
-
-
-# for _ in range(15):
-#     tim.forward(10)
-#     tim.penup()
-#     tim.forward(10)
-#     tim.pendown()
-
-
-# colors = [
-#     "medium spring green", "gold", "orange red", "yellow green", "rosy brown", "blue3", "black", "DarkOrange3",
-#     "HotPink1", "gray10", "LightPink", "HotPink2", "LightSeaGreen", "red", "yellow", "black", "salmon1",
-#     "yellow4", "purple3", "snow3", "turquoise", "YellowGreen", "tan1", "LimeGreen"
-# ]
-
-colors = [
-    "yellow", "black", "red", "blue", "green"
+colours = [
+    "CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue",
+    "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"
+]
+angles = [
+    0, 90, 180, 270
 ]
 
 
-def draw_shapes(start_shape, finish_shape):
-    angle = start_shape
-    for i in range(finish_shape - start_shape + 1):
-        current_color = random.choice(colors)
-        for _ in range(angle):
-            tim.pencolor(current_color)
-            tim.forward(100)
-            tim.right(360 / angle)
-        angle += 1
+tim.pensize(5)
+tim.ht()
+tim.speed(30)
+# for _ in range(50):
+#     x = random.randint(0, 200)
+#     y = random.randint(0, 200)
+#     tim.setx(x)
+#     tim.sety(y)
 
 
-draw_shapes(3, 10)
+for _ in range(200):
+    pen_color = random.choice(colours)
+    angle = random.choice(angles)
+    # angle = random.randint(0, 360)
+    tim.forward(30)
+    tim.setheading(angle)
+    tim.pencolor(pen_color)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 screen = Screen()
 screen.exitonclick()
+
