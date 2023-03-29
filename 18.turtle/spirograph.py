@@ -12,24 +12,16 @@ def random_color():
 
 
 turtle.colormode(255)
+
+
 tim = Turtle()
-tim.pensize(20)
-nmb_horiz = 10
-nmb_vert = 10
-
-tim.hideturtle()
-tim.penup()
-tim.setpos(-300, -300)
-
-
-tim.showturtle()
-tim.pendown()
-tim.dot(20)
-# tim.forward(100)
-
-
-
-
+angle = 3
+tim.speed(30)
+for _ in range(int(360 / angle)):
+    pen_color = random_color()
+    tim.pencolor(pen_color)
+    tim.circle(-100)
+    tim.right(angle)
 
 
 
