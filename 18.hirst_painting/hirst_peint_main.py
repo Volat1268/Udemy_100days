@@ -22,12 +22,14 @@ colors_list = [(246, 245, 243), (233, 239, 246), (246, 239, 242), (240, 246, 243
 turtle.colormode(255)
 tim = Turtle()
 tim.hideturtle()
-nmb_horiz = 10
-nmb_vert = 10
-
+nmb_horiz = 20
+nmb_vert = 20
+dot_size = 20
+step_size = 30
+tim.speed("fastest")
 tim.penup()
 x_pos = -250
-y_pos = -300
+y_pos = -250
 tim.setpos(x_pos, y_pos)
 
 
@@ -35,9 +37,9 @@ for y in range(nmb_vert):
     for x in range(nmb_horiz):
         # dot_color = random.choice(colors_list)
         dot_color = random_color()
-        tim.dot(20, dot_color)
-        tim.forward(50)
-    y_pos += 50
+        tim.dot(dot_size, dot_color)
+        tim.forward(step_size)
+    y_pos += step_size
     tim.setpos(x_pos, y_pos)
 
 
