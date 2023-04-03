@@ -2,17 +2,7 @@ from turtle import Turtle, Screen
 import random
 
 screen = Screen()
-<<<<<<< HEAD
-tim.shape("turtle")
 
-
-def tim_forward():
-    tim.forward(30)
-
-
-screen.listen()
-screen.onkey(fun=tim_forward, key="space")
-=======
 width_screen = 800
 height_screen = 600
 screen.setup(width=width_screen, height=height_screen)
@@ -66,8 +56,13 @@ if user_bet:
 
 while is_continue:
     for turtle in turtles:
-        if turtle.xcor() >= x_finish_line:
-
+        if turtle.xcor() >= x_finish_line - 15:
+            is_continue = False
+            winner = turtle.pencolor()
+            if winner == user_bet:
+                print(f"You've won! The {winner} is winner! ")
+            else:
+                print(f"You've lose! The {winner} is winner! ")
         distance = random.randint(1, 10)
         turtle.fd(distance)
 
@@ -76,12 +71,6 @@ while is_continue:
 
 
 
-
-
-
-
-
->>>>>>> 2d5b9cf2ee0e54abf56774f0aef0424a46f0c8ef
 
 
 
