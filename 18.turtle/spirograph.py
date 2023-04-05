@@ -20,7 +20,7 @@ tim.speed(30)
 for _ in range(int(360 / angle)):
     pen_color = random_color()
     tim.pencolor(pen_color)
-    tim.circle(-100)
+    tim.circle(200)
     tim.right(angle)
 
 
