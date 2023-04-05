@@ -63,7 +63,7 @@ while is_continue:
                 print(f"You've won! The {winner} is winner! ")
             else:
                 print(f"You've lose! The {winner} is winner! ")
-        distance = random.randint(1, 5)
+        distance = random.randint(1, 10)
         turtle.fd(distance)
 
 

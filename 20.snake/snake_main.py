@@ -20,12 +20,21 @@ for position in start_positions:
 
 
 game_is_on = True
+# while game_is_on:
+#     for seg in segments:
+#         seg.penup()
+#         seg.fd(20)
+
 while game_is_on:
-    for seg in segments:
-        seg.penup()
-        seg.fd(20)
-        screen.update()
-        time.sleep(1)
+    screen.update()
+    time.sleep(1)
+
+    for seg_num in range(len(segments)-1, 0, -1):
+        new_x = segments[seg_num - 1].xcor()
+        new_y = segments[seg_num - 1].ycor()
+        segments[seg_num].goto(new_x, new_y)
+    segments[0].fd(20)
+    segments[0].left(90)
 
 
 
