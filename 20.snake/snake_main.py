@@ -1,8 +1,8 @@
-from turtle import, Screen
+from turtle import Screen
 import time
 from snake import Snake
 from food import Food
-from scoreborad import Scoreboard
+from scoreboard import Scoreboard
 NUM = 0
 
 screen = Screen()
