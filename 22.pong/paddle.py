@@ -12,4 +12,10 @@ class Paddle(Turtle):
         self.color("white")
         self.shapesize(stretch_len=5)
 
+    def move_up(self):
+        self.forward(20)
+
+    def move_down(self):
+        self.backward(20)
+
 
