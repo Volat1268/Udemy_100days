@@ -8,3 +8,6 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
 
+    def move(self):
+        x_cor_screen =
+
