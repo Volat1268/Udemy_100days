@@ -21,6 +21,11 @@ class Ball(Turtle):
     def x_bonce(self):
         self.x_change *= -1
 
+    def reset_position(self):
+        self.home()
+        self.x_bonce()
+
+
 
 
 

@@ -27,10 +27,12 @@ while game_is_on:
     screen.update()
     time.sleep(0.1)
     ball.move()
-    if ball.ycor() > 290 or ball.ycor() < -290:
+    if ball.ycor() >= 290 or ball.ycor() <= -290:
         ball.y_bonce()
     if ball.distance(l_paddle) < 50 and ball.xcor() < -320 or ball.distance(r_paddle) < 50 and ball.xcor() > 320:
         ball.x_bonce()
+    if ball.xcor() >= 380:
+        ball.reset_position()
 
 
 
