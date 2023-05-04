@@ -9,6 +9,7 @@ class Ball(Turtle):
         self.color("white")
         self.x_change = 10
         self.y_change = 10
+        self.move_speed = 0.1
 
     def move(self):
         new_xcor = self.xcor() + self.x_change
@@ -20,10 +21,12 @@ class Ball(Turtle):
 
     def x_bonce(self):
         self.x_change *= -1
+        self.move_speed *= 0.8
 
     def reset_position(self):
         self.home()
         self.x_bonce()
+        self.move_speed = 0.1
 
 
 

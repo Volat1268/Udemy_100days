@@ -23,16 +23,17 @@ screen.onkeypress(r_paddle.move_down, "Down")
 screen.onkeypress(l_paddle.move_up, "w")
 screen.onkeypress(l_paddle.move_down, "s")
 
-
+time_sleep = 0.1
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
     ball.move()
     if ball.ycor() >= 290 or ball.ycor() <= -290:
         ball.y_bonce()
     if ball.distance(l_paddle) < 50 and ball.xcor() < -320 or ball.distance(r_paddle) < 50 and ball.xcor() > 320:
         ball.x_bonce()
+
     if ball.xcor() >= 390:
         ball.reset_position()
         scoreboard.l_change()
