@@ -10,9 +10,21 @@ class Player(Turtle):
         super().__init__()
         self.penup()
         self.shape("turtle")
-        self.goto(STARTING_POSITION)
+        self.go_to_start()
         self.setheading(90)
+        self.player_speed = MOVE_DISTANCE
 
     def player_move(self):
-        self.forward(MOVE_DISTANCE)
+        self.forward(self.player_speed)
 
+    def go_to_start(self):
+        self.goto(STARTING_POSITION)
+
+    def is_finish_reached(self):
+        if self.ycor() >= FINISH_LINE_Y:
+            return True
+        else:
+            return False
+
+    def change_speed(self):
+        self.player_speed += MOVE_DISTANCE
