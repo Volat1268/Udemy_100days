@@ -1,27 +1,38 @@
 from turtle import Turtle
 
-FONT = ("Courier", 24, "normal")
+FONT = ("Courier", 20, "normal")
 
 
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
-        self.l_score = 0
-        self.r_score = 0
-        self.hideturtle()
-        self.penup()
-        self.color("black")
-        self.create_score()
-
-    def create_score(self):
         self.clear()
-        self.goto(-50, 290)
-        self.write(self.l_score, align="Center", font=FONT)
-        self.goto(50, 290)
-        self.write(self.r_score, align="Center", font=FONT)
+        self.penup()
+        self.hideturtle()
+        self.goto(-280, 260)
+        self.level = 1
+        self.life = 3
+        self.color("blue")
+        self.update_scoreboard()
 
-    def l_score_change(self):
-        self.l_score += 1
+    def update_scoreboard(self):
+        self.clear()
+        self.write(f"Level: {self.level}", font=FONT)
 
-    def r_score_change(self):
-        self.r_score += 1
+    def change_level(self):
+        self.level += 1
+        self.update_scoreboard()
+
+    def game_over(self):
+        self.home()
+        self.color("red")
+        self.write("GAME OVER!", align="Center", font=FONT)
+
+    def update_life_score(self):
+        self.clear()
+        self.write(f"Life: {self.life}", align="Right", font=FONT)
+
+    def decrease_life(self):
+        self.life -= 1
+        self.update_life_score()
+
