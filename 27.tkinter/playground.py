@@ -17,4 +17,4 @@ class Student:
 
 first_student = Student(age=20, first_name="Aleks", last_name="Volat", country="Belarus", score=55)
 
-print(first_student.age)
+print(first_student.year)
